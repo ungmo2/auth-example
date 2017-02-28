@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Signin Template</title>
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="./libs/bootstrap/dist/css/bootstrap.min.css">
+  <!-- font awesome css -->
+  <link rel="stylesheet" href="./libs/font-awesome/css/font-awesome.min.css" >
+  <!-- Custom styles for this template -->
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- xs: container width sm: 2/3 md & lg: 1/2-->
+    <div id="signin-box" class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <div class="panel-title">Sign In</div>
+          <div class="forgot-password"><a id="goto-forget-password">Forgot password?</a></div>
+        </div>
+        <div class="panel-body padding-top-30">
+          <div id="signin-alert" class="alert alert-danger"></div>
+          <form id="signin-form" class="form-horizontal">
+            <div class="input-group margin-bottom-25">
+              <div class="input-group-addon"><i class="glyphicon glyphicon-user"></i></div>
+              <input type="text" class="form-control username" name="username" value="{{user}}" placeholder="email">
+            </div>
+            <div class="input-group margin-bottom-25">
+              <div class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></div>
+              <input type="password" class="form-control password" name="password" placeholder="password">
+            </div>
+            <div class="input-group">
+              <div class="checkbox">
+                <label>
+                  <input id="remember" type="checkbox" name="remember" value="1" {{rem}}> Remember me
+                </label>
+              </div>
+            </div>
+            <div class="form-group margin-top-10">
+              <div class="col-sm-12">
+                <!--<a id="btn-signin" class="btn btn-success">Sign In</a>-->
+                <input type="submit" id="btn-signin" class="btn btn-success" value="Sign In">
+                <div class="btn-group pull-right">
+                  <a class="btn btn-primary disabled"><i class="fa fa-facebook"></i></a>
+                  <a id="btn-fb-signin" href="/auth/facebook" class="btn btn-primary">Sign In with Facebook</a>
+                  <!-- <input type="submit" id="btn-fb-signin" class="btn btn-primary" value="Sign In with Facebook"> -->
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-md-12">
+                <div class="req-signup">
+                  Don't have an account!
+                  <a id="signup-here">Sign Up Here</a>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- signup -->
+    <div id="signup-box" class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <div class="panel-title">Sign Up</div>
+          <div class="signin"><a id="goto-signin">Sign In</a></div>
+        </div>
+        <div class="panel-body padding-top-30">
+          <form id="signup-form" class="form-horizontal">
+            <div id="signup-alert" class="alert alert-danger">
+              <!-- <p>Error:</p>
+              <span></span> -->
+            </div>
+            <div class="form-group">
+              <label for="email" class="col-md-4 control-label">Email*</label>
+              <div class="col-md-8">
+                <input type="text" class="form-control username" name="username" placeholder="email">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="firstname" class="col-md-4 control-label">First Name</label>
+              <div class="col-md-8">
+                <input type="text" class="form-control" name="firstname" placeholder="First Name">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="lastname" class="col-md-4 control-label">Last Name</label>
+              <div class="col-md-8">
+                <input type="text" class="form-control" name="lastname" placeholder="Last Name">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="password" class="col-md-4 control-label">Password*</label>
+              <div class="col-md-8">
+                <input type="password" class="form-control password" name="password" placeholder="Password">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="password-confirm" class="col-md-4 control-label">Password(Confirm)</label>
+              <div class="col-md-8">
+                <input type="password" class="form-control password-confirm" name="password-confirm" placeholder="Password">
+              </div>
+            </div>
+            <div class="form-group">
+              <!-- Button -->
+              <div class="col-md-offset-4 col-md-8">
+                <button id="btn-signup" type="button" class="btn btn-info">Sign Up &nbsp;<span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span></button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- forgot-password-box -->
+    <div id="forgot-password-box" class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <div class="panel-title">Forgot Password?</div>
+        </div>
+        <div class="panel-body padding-top-30">
+          <div id="forgot-password-alert" class="alert alert-danger"></div>
+          <form id="forgot-password-form" class="form-horizontal">
+            <p class="margin-bottom-25">Enter your e-mail address below to reset your password.</p>
+            <div class="input-group margin-bottom-25">
+              <div class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></div>
+              <input id="forgot-password-email" type="password" class="form-control" name="forgot-password-email" placeholder="email">
+            </div>
+
+            <div class="form-group margin-top-10">
+              <div class="col-sm-12">
+                <a id="btn-back" class="btn btn-info">Back</a>
+                <a id="btn-sumit" class="btn btn-success pull-right">Submit</a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./libs/jquery/dist/jquery.min.js"></script>
+  <script src="./js/index.js"></script>
+</body>
+</html>

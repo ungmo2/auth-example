@@ -1,0 +1,16 @@
+# npm
+node_modules/
+npm-debug.log
+
+# bower
+public/libs/
+
+# Mac OS X
+.DS_Store
+
+# Config file
+config/auth.js
+config/db.js
+
+# temp
+README.md

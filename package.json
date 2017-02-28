@@ -1,0 +1,28 @@
+{
+  "name": "auth-example",
+  "version": "1.0.0",
+  "description": "Authentication example",
+  "main": "app.js",
+  "scripts": {
+    "auth": "supervisor node app.js",
+    "auth-session": "supervisor node app_session.js",
+    "auth-passport": "supervisor node app_passport.js",
+    "debug-auth": "supervisor node --inspect app.js",
+    "debug-auth-session": "supervisor node --inspect app_session.js",
+    "debug-auth-passport": "supervisor node --inspect app_passport.js"
+  },
+  "keywords": [],
+  "author": "ungmo2@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "1.16.1",
+    "cookie-parser": "1.4.3",
+    "express": "4.14.1",
+    "express-handlebars": "3.0.0",
+    "express-session": "1.15.1",
+    "mongoose": "4.8.4",
+    "passport": "0.3.2",
+    "passport-facebook": "2.1.1",
+    "passport-local": "1.0.0"
+  }
+}

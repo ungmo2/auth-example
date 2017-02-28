@@ -1,0 +1,42 @@
+#signin-box {
+  margin-top:50px;
+}
+.forgot-password, .signin {
+  float: right;
+  font-size: .8em;
+  position: relative;
+  top: -15px;
+}
+.padding-top-30 {
+  padding-top: 30px;
+}
+.margin-top-10 {
+  margin-top:10px
+}
+.margin-bottom-25 {
+  margin-bottom: 25px;
+}
+#signin-alert, #signup-alert, #forgot-password-alert {
+  display: none;
+  font-size: 12px;
+  padding: 10px;
+}
+.req-signup {
+  border-top: 1px solid#888;
+  padding-top: 15px;
+  font-size: .85em;
+}
+#signup-box {
+  display: none;
+  margin-top: 50px;
+}
+#forgot-password-box {
+  display: none;
+  margin-top: 50px;
+}
+.pull-right {
+  float: right;
+}
+#btn-fb-signin {
+  outline: none;
+}
