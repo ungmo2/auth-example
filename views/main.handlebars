@@ -1,32 +1,39 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>{{title}}</title>
   <!-- Bootstrap core CSS -->
   <link rel="stylesheet" href="./libs/bootstrap/dist/css/bootstrap.min.css">
 </head>
-<body>
-<h1>{{msg}}: <em>{{id}}</em></h1>
-<a href="/" class="btn btn-success">back</a>
-{{#if logout_display}}
-<button type="button" class="btn btn-danger">Logout</button>
-{{/if}}
 
-<script src="./libs/jquery/dist/jquery.min.js"></script>
-<script>
-$(function(){
-  $("button").on("click", function(){
-    $.ajax({
-      url: "/auth/signout"
-    })
-    .done(function(data){
-      if(data && data.redirect) window.location.href = data.redirect;
-    })
-    .fail(function(err) {
-      throw err;
+<body>
+  <div class="container">
+    <div class="row">
+      <h1>{{msg}}</h1>
+      <h3>username : {{id}}</h3>
+      <a href="/" class="btn btn-success">back</a> {{#if logout_display}}
+      <button type="button" class="btn btn-danger">Logout</button> {{/if}}
+    </div>
+  </div>
+
+  <script src="./libs/jquery/dist/jquery.min.js"></script>
+  <script>
+    $(function () {
+      $("button").on("click", function () {
+        $.ajax({
+          url: "/auth/signout"
+        })
+          .done(function (data) {
+            if (data && data.redirect) window.location.href = data.redirect;
+          })
+          .fail(function (err) {
+            throw err;
+          });
+      });
     });
-  });
-});
-</script>
+
+  </script>
 </body>
+
 </html>
