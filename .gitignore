@@ -12,5 +12,8 @@ public/libs/
 config/auth.js
 config/db.js
 
+# vs code
+.vscode/
+
 # temp
 README.md
